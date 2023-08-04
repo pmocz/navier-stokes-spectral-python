@@ -115,13 +115,13 @@ def main():
 		vy += dt * rhs_y
 		
 		# Poisson solve for pressure
-		div_v = div(vx, vy, kx, ky)
+		div_v = div(rhs_x, rhs_y, kx, ky)
 		P = poisson_solve( div_v, kSq_inv )
 		dPx, dPy = grad(P, kx, ky)
 		
 		# Correction (to eliminate divergence component of velocity)
-		vx += - dPx
-		vy += - dPy
+		vx += - dt * dPx
+		vy += - dt * dPy
 		
 		# Diffusion solve (implicit)
 		vx = diffusion_solve( vx, dt, nu, kSq )
