@@ -1,5 +1,5 @@
 # navier-stokes-spectral-python
-Spectral Solver for Schrodinger-Poisson Quantum System
+Spectral Solver for Navier-Stokes Equations
 
 ## Create Your Own Navier-Stokes Spectral Method Simulation (With Python)
 
